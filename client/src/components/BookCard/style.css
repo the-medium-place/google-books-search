@@ -1,0 +1,23 @@
+.book-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.book-card {
+    height: auto;
+    width: 100%;
+    border: 3px solid black;
+    padding: 10px;
+}
+
+.book-img {
+    height: 100%;
+}
+
+.book-button {
+    display: flex;
+    justify-content: flex-end;
+
+}

@@ -1,0 +1,23 @@
+.books-container {
+    width: 90vw;
+    background-color: lightgray;
+    margin: 0 auto;
+    border: 3px solid grey;
+    padding: 5px;
+}
+
+.search-form-container {
+    width: 80vw;
+    height: auto;
+    background: lightgray;
+    border: 3px solid gray;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.search-form-container button {
+    float: right;
+    margin: 10px;
+}
