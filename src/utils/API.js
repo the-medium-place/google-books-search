@@ -2,7 +2,7 @@ import axios from "axios";
 const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
 const SINGLURL = "https://www.googleapis.com/books/v1/volumes/"
 const APIKEY = "&key=AIzaSyAGK1tMt8qfphx82CGJ5ncckw6Tqu1bKIQ";
-
+// LOCALLY USE http://localhost:3001
 
 export default {
   search: function(query) {
