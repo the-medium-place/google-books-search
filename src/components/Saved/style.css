@@ -1,0 +1,16 @@
+.saved_container {
+    min-height: 300px;
+    width: 90vw;
+    background-color: lightgray;
+    margin: 0 auto;
+    border: 3px solid grey;
+    padding: 5px;
+}
+
+.books-container {
+    width: 90vw;
+    background-color: lightgray;
+    margin: 0 auto;
+    border: 3px solid grey;
+    padding: 5px;
+}
