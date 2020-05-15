@@ -24,7 +24,7 @@ export default function index(props) {
         </Col>
       </Row>
       <Row>
-        <Col xs={3}>
+        <Col xs={4}>
           <div className="book-img">
             <img src={props.imgURL} alt="Book Thumbnail" />
           </div>

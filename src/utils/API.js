@@ -25,8 +25,8 @@ export default {
   },
 
   deleteFav: function (book) {
-    console.log(book);
-    return axios.delete("http://localhos:3001/api/favbooks/" + book)
+    console.log("book _id" + book);
+    return axios.delete("http://localhost:3001/api/favbooks/" + book)
   }
 };
 

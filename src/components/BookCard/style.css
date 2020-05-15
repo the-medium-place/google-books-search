@@ -13,7 +13,9 @@
 }
 
 .book-img {
-    height: 100%;
+    display: flex;
+   justify-content: center;
+   width: auto;
 }
 
 .book-button {

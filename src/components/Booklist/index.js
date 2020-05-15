@@ -13,12 +13,31 @@ export default class Booklist extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state.userInput);
         API.search(this.state.userInput)
-            .then(res => this.setState({
-                searchResults: res.data.items,
-                userInput: ""
-            }))
+            .then(res => {
+                if (!res.data.items) {
+                    this.setState({
+                        searchResults: [{
+                            id: "",
+                            volumeInfo: {
+                                authors: [],
+                                title: "Search Returned No Results",
+                                subTitle: "Please try another search...",
+                                infoLink: "",
+                                description: "",
+                                imageLinks: {
+                                    thumbnail: "https://media.giphy.com/media/dt0Oep0PKarQG7cQLp/giphy.gif"
+                                }
+                            }
+                        }]
+                    })
+                } else {
+                    this.setState({
+                        searchResults: res.data.items,
+                        userInput: ""
+                    })
+                }
+            })
     }
 
     handleInputChange = event => {
@@ -26,9 +45,9 @@ export default class Booklist extends Component {
         this.setState({ userInput: event.target.value });
     }
 
-    
+
     handleBookSave = event => {
-        const favBook = this.state.searchResults.find(book=> book.id === event.target.id);
+        const favBook = this.state.searchResults.find(book => book.id === event.target.id);
         console.log(favBook);
         API.addFav(favBook);
         console.log("end client side");
@@ -37,7 +56,7 @@ export default class Booklist extends Component {
     renderBooks = () => {
         if (this.state.searchResults.length < 1) {
             // console.log('no results test')
-            return <div><h1>Search for a book to start!</h1></div>
+            return <div className="text-center"><h1>Search for a book to start!</h1></div>
         } else {
             return <div>
                 {this.state.searchResults.map((book, index) => <BookCard
@@ -48,8 +67,8 @@ export default class Booklist extends Component {
                     infoLink={book.volumeInfo.infoLink}
                     description={book.volumeInfo.description}
                     bookID={book.id}
-                    key={index} 
-                    handleBookSave={this.handleBookSave}/>)}
+                    key={index}
+                    handleBookSave={this.handleBookSave} />)}
             </div>
         }
     }
@@ -84,17 +103,6 @@ export default class Booklist extends Component {
                 </div>
                 <div className="books-container">
                     {this.renderBooks()}
-                    {/* <div>
-                        {this.state.searchResults.map((book, index) => <BookCard
-                            authors={book.volumeInfo.authors}
-                            imgURL={book.volumeInfo.imageLinks.thumbnail}
-                            title={book.volumeInfo.title}
-                            subTitle={book.volumeInfo.subtitle}
-                            infoLink={book.volumeInfo.infoLink}
-                            description={book.volumeInfo.description}
-                            bookID={book.id}
-                            key={book.id} />)}
-                    </div> */}
                 </div>
             </div>
 

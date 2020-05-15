@@ -1,10 +1,11 @@
 import React from 'react'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
+import './style.css';
 
 export default function index() {
     return (
-        <Jumbotron fluid>
+        <Jumbotron fluid id="jumbotron-style">
         <Container>
           <h1 className="text-center">Google Books Search</h1>
           <p className="text-center">
