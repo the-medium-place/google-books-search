@@ -11,7 +11,7 @@ export default {
   },
 
   searchFavs: function() {
-    return axios.get("http://localhost:3001/api/favbooks")
+    return axios.get("https://awesome-google-books-search.herokuapp.com/api/favbooks")
     // return axios.get(SINGLURL + query + APIKEY)
   },
 
@@ -20,13 +20,13 @@ export default {
   },
 
   addFav: function(book) {
-    return axios.post("http://localhost:3001/api/favbooks", book)
+    return axios.post("https://awesome-google-books-search.herokuapp.com/api/favbooks", book)
 
   },
 
   deleteFav: function (book) {
     console.log("book _id" + book);
-    return axios.delete("http://localhost:3001/api/favbooks/" + book)
+    return axios.delete("https://awesome-google-books-search.herokuapp.com/api/favbooks/" + book)
   }
 };
 
