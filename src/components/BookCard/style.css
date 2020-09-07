@@ -8,8 +8,8 @@
 .book-card {
     height: auto;
     width: 100%;
-    border: 3px solid black;
-    padding: 10px;
+    /* border: 3px solid black; */
+    /* padding: 10px; */
 }
 
 .book-img {

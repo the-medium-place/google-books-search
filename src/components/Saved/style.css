@@ -1,9 +1,9 @@
 .saved_container {
     min-height: 300px;
     width: 90vw;
-    background-color: lightgray;
+    /* background-color: lightgray; */
     margin: 0 auto;
-    border: 3px solid grey;
+    /* border: 3px solid grey; */
     padding: 5px;
 }
 
@@ -11,7 +11,47 @@
     width: 90vw;
     background-color: lightgray;
     margin: 0 auto;
-    border: 3px solid grey;
-    padding: 5px;
+    /* box-shadow: 5px 5px 3em 5px black; */
+    /* border: 3px solid grey; */
+    /* padding: 5px; */
+    position: relative;
+    padding: 1rem;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    margin-bottom: 3rem;
 }
 
+.books-container::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  right: 10px;
+  left: auto;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+}
+
+.inner-light {
+    /* border: 1px solid black; */
+    /* position:absolute; */
+    top: 1.5rem;
+    left: 1.5rem;
+    border-radius: 9px;
+    /* height: 90%;
+    width: 90%; */
+    /* box-shadow: inset 5px 1px 2rem 5px rgba(255, 255, 255, 0.9),
+    1px 1px 1.6rem 1px white; */
+
+}

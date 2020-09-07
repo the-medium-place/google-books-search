@@ -4,6 +4,10 @@ const SINGLURL = "https://www.googleapis.com/books/v1/volumes/"
 const APIKEY = "&key=AIzaSyAGK1tMt8qfphx82CGJ5ncckw6Tqu1bKIQ";
 // LOCALLY USE http://localhost:3001
 
+const API_URL = 'http://localhost:3001/api/favbooks'
+// const API_URL = 'https://awesome-google-books-search.herokuapp.com/api/favbooks';
+
+
 export default {
   search: function(query) {
     console.log(BASEURL + query + APIKEY)
@@ -11,8 +15,9 @@ export default {
   },
 
   searchFavs: function() {
-    return axios.get("https://awesome-google-books-search.herokuapp.com/api/favbooks")
+    // return axios.get("https://awesome-google-books-search.herokuapp.com/api/favbooks")
     // return axios.get(SINGLURL + query + APIKEY)
+    return axios.get(API_URL);
   },
 
   populateFavs: function(query) {
@@ -20,13 +25,14 @@ export default {
   },
 
   addFav: function(book) {
-    return axios.post("https://awesome-google-books-search.herokuapp.com/api/favbooks", book)
-
+    // return axios.post("https://awesome-google-books-search.herokuapp.com/api/favbooks", book)
+    return axios.post(API_URL, book)
   },
 
   deleteFav: function (book) {
     console.log("book _id" + book);
-    return axios.delete("https://awesome-google-books-search.herokuapp.com/api/favbooks/" + book)
+    // return axios.delete("https://awesome-google-books-search.herokuapp.com/api/favbooks/" + book)
+    return axios.delete(API_URL + '/' + book);
   }
 };
 

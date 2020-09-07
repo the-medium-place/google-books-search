@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SavedCard from '../SavedCard';
 import API from '../../utils/API';
+import './style.css';
 
 export default class Saved extends Component {
 
@@ -56,6 +57,7 @@ export default class Saved extends Component {
     render() {
         return (
             <div className="books-container">
+                <div className="inner-light">
 
                 <div className="saved-container">
                 {this.renderBooks()}
@@ -74,7 +76,7 @@ export default class Saved extends Component {
                     />
                     )} */}
 
-
+</div>
                 </div>
             </div>
         )

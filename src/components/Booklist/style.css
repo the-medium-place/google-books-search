@@ -1,16 +1,56 @@
-.books-container {
+
+
+
+/* .effect4
+{
+  position: relative;
+} */
+.result-card {
+    /* border: 1px solid black;
+    margin-bottom: 3rem; */
     width: 90vw;
     background-color: lightgray;
     margin: 0 auto;
-    border: 3px solid grey;
-    padding: 5px;
+    margin-bottom: 3rem;
+    /* box-shadow: 5px 5px 3em 5px black; */
+    /* border: 3px solid grey; */
+    /* padding: 5px; */
+    position: relative;
+    padding: 1rem;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+
 }
+
+.result-card::after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    right: 10px;
+    left: auto;
+    width: 50%;
+    top: 80%;
+    max-width:300px;
+    background: #777;
+    -webkit-box-shadow: 0 15px 10px #777;
+    -moz-box-shadow: 0 15px 10px #777;
+    box-shadow: 0 15px 10px #777;
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+}
+
+
 
 .search-form-container {
     width: 80vw;
     height: auto;
     background: lightgray;
-    border: 3px solid gray;
+    /* border: 3px solid gray; */
     border-radius: 5px;
     margin: 0 auto;
     padding: 15px;

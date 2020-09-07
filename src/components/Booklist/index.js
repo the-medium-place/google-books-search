@@ -59,7 +59,8 @@ export default class Booklist extends Component {
             return <div className="text-center"><h1>Search for a book to start!</h1></div>
         } else {
             return <div>
-                {this.state.searchResults.map((book, index) => <BookCard
+                {this.state.searchResults.map((book, index) => <div className="result-card">
+                    <BookCard
                     authors={book.volumeInfo.authors}
                     imgURL={book.volumeInfo.imageLinks.thumbnail}
                     title={book.volumeInfo.title}
@@ -68,7 +69,8 @@ export default class Booklist extends Component {
                     description={book.volumeInfo.description}
                     bookID={book.id}
                     key={index}
-                    handleBookSave={this.handleBookSave} />)}
+                    handleBookSave={this.handleBookSave} />
+                    </div>)}
             </div>
         }
     }
@@ -101,7 +103,9 @@ export default class Booklist extends Component {
                     </form>
 
                 </div>
-                <div className="books-container">
+                <div 
+                // className="books-container"
+                >
                     {this.renderBooks()}
                 </div>
             </div>
