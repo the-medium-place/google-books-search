@@ -10,7 +10,7 @@ const API_URL = 'http://localhost:3001/api/favbooks'
 
 export default {
   search: function(query) {
-    console.log(BASEURL + query + APIKEY)
+    // console.log(BASEURL + query + APIKEY)
     return axios.get(BASEURL + query + APIKEY);
   },
 

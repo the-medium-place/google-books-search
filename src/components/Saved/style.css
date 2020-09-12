@@ -7,7 +7,7 @@
     padding: 5px;
 }
 
-.books-container {
+.saved-book-card {
     width: 90vw;
     background-color: lightgray;
     margin: 0 auto;
@@ -22,7 +22,7 @@
     margin-bottom: 3rem;
 }
 
-.books-container::after {
+.saved-book-card::after {
   z-index: -1;
   position: absolute;
   content: "";
@@ -41,17 +41,4 @@
   -o-transform: rotate(3deg);
   -ms-transform: rotate(3deg);
   transform: rotate(3deg);
-}
-
-.inner-light {
-    /* border: 1px solid black; */
-    /* position:absolute; */
-    top: 1.5rem;
-    left: 1.5rem;
-    border-radius: 9px;
-    /* height: 90%;
-    width: 90%; */
-    /* box-shadow: inset 5px 1px 2rem 5px rgba(255, 255, 255, 0.9),
-    1px 1px 1.6rem 1px white; */
-
 }

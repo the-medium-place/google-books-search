@@ -7,7 +7,7 @@ export default class Saved extends Component {
 
     state = {
         searchResults: []
-        }
+    }
 
     componentDidMount = () => {
         API.searchFavs()
@@ -22,11 +22,11 @@ export default class Saved extends Component {
         // console.log(event.target.id)
         this.setState({ clickedBookID: event.target.id })
         API.deleteFav(event.target.id)
-        .then(res=> {
-            window.location.href = "/saved";
+            .then(res => {
+                window.location.href = "/saved";
 
-        })
-        .catch(err=> console.log(err))
+            })
+            .catch(err => console.log(err))
     }
 
     renderBooks = () => {
@@ -34,21 +34,21 @@ export default class Saved extends Component {
             // console.log('no results test')
             return <div className="text-center"><h1>No Saved Books Yet! <a href="/search">Search</a> for books and click the 'Save' button to see them here!</h1></div>
         } else {
-            return <div>
-                {this.state.searchResults.map((book, index) => <SavedCard
-                        authors={book.authors}
-                        imgURL={book.imgURL}
-                        title={book.title}
-                        subTitle={book.subtitle}
-                        infoLink={book.infoLink}
-                        description={book.description}
-                        bookID={book.bookID}
-                        key={index}
-                        id={book._id}
-                        handleBookDelete={this.handleBookDelete}
-                    />
-                    )}
-            </div>
+            return <>
+                {this.state.searchResults.map((book, index) => <div className="saved-book-card" key={index}><SavedCard
+                    authors={book.authors}
+                    imgURL={book.imgURL}
+                    title={book.title}
+                    subTitle={book.subtitle}
+                    infoLink={book.infoLink}
+                    description={book.description}
+                    bookID={book.bookID}
+                    key={index}
+                    id={book._id}
+                    handleBookDelete={this.handleBookDelete}
+                /></div>
+                )}
+            </>
         }
     }
 
@@ -56,29 +56,11 @@ export default class Saved extends Component {
 
     render() {
         return (
-            <div className="books-container">
-                <div className="inner-light">
-
+            // <div className="books-container">
                 <div className="saved-container">
-                {this.renderBooks()}
-
-                    {/* {this.state.searchResults.map((book, index) => <SavedCard
-                        authors={book.authors}
-                        imgURL={book.imgURL}
-                        title={book.title}
-                        subTitle={book.subtitle}
-                        infoLink={book.infoLink}
-                        description={book.description}
-                        bookID={book.bookID}
-                        key={index}
-                        id={book._id}
-                        handleBookDelete={this.handleBookDelete}
-                    />
-                    )} */}
-
-</div>
+                    {this.renderBooks()}
                 </div>
-            </div>
+            // </div>
         )
     }
 }

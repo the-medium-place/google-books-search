@@ -48,7 +48,7 @@ export default class Booklist extends Component {
 
     handleBookSave = event => {
         const favBook = this.state.searchResults.find(book => book.id === event.target.id);
-        console.log(favBook);
+        // console.log(favBook);
         API.addFav(favBook);
         console.log("end client side");
     }
@@ -59,7 +59,7 @@ export default class Booklist extends Component {
             return <div className="text-center"><h1>Search for a book to start!</h1></div>
         } else {
             return <div>
-                {this.state.searchResults.map((book, index) => <div className="result-card">
+                {this.state.searchResults.map((book, index) => <div className="result-card" key={index}>
                     <BookCard
                     authors={book.volumeInfo.authors}
                     imgURL={book.volumeInfo.imageLinks.thumbnail}
