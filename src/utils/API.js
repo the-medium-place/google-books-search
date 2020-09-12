@@ -2,7 +2,6 @@ import axios from "axios";
 
 const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
 const SINGLURL = "https://www.googleapis.com/books/v1/volumes/"
-// const APIKEY = "&key=AIzaSyAGK1tMt8qfphx82CGJ5ncckw6Tqu1bKIQ";
 const APIKEY = process.env.REACT_APP_GOOGLE_API_KEY;
 // LOCALLY USE http://localhost:3001
 
@@ -13,6 +12,7 @@ const API_URL = 'http://localhost:3001/api/favbooks'
 export default {
   search: function(query) {
     console.log(BASEURL + query + APIKEY)
+    console.log(APIKEY);
     return axios.get(BASEURL + query + APIKEY);
   },
 
