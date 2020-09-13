@@ -10,7 +10,7 @@ const API_URL = 'https://awesome-google-books-api.herokuapp.com/api/favbooks';
 
 export default {
   search: function(query) {
-    console.log(BASEURL + query + APIKEY)
+    // console.log(BASEURL + query + APIKEY)
     // console.log(APIKEY);
     return axios.get(BASEURL + query + APIKEY);
   },
