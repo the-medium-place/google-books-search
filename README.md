@@ -4,7 +4,7 @@
 This application uses React JS and Mongoose, allowing a user to search the Google Books API, and save any results to a list that is displayed on the 'Saved' page. The user can also delete books from this list giving the app CR_D functionality. 
 
 ## Usage: 
-Visit the deployed app [HERE](https://pacific-earth-75465.herokuapp.com/)!
+Visit the deployed app [HERE](https://awesome-google-books-react.herokuapp.com//)!
 
 ![screenshot 1](./screenshot1.png)
 
