@@ -5,14 +5,13 @@ const SINGLURL = "https://www.googleapis.com/books/v1/volumes/"
 const APIKEY = process.env.REACT_APP_GOOGLE_API_KEY;
 // LOCALLY USE http://localhost:3001
 
-const API_URL = 'http://localhost:3001/api/favbooks'
-// const API_URL = 'https://awesome-google-books-search.herokuapp.com/api/favbooks';
-
+// const API_URL = 'http://localhost:3001/api/favbooks'
+const API_URL = 'https://awesome-google-books-api.herokuapp.com/api/favbooks';
 
 export default {
   search: function(query) {
     console.log(BASEURL + query + APIKEY)
-    console.log(APIKEY);
+    // console.log(APIKEY);
     return axios.get(BASEURL + query + APIKEY);
   },
 
